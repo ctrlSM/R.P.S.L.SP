@@ -26,178 +26,115 @@ p {
 </html>
 
 
-# Rock-paper-scissors-lizard-Spock template
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Hello!</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-# The key idea of this program is to equate the strings
-# "rock", "paper", "scissors", "lizard", "Spock" to numbers
-# as follows:
-#
-# 0 - rock
-# 1 - Spock
-# 2 - paper
-# 3 - lizard
-# 4 - scissors
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
 
-# helper functions
-import random
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <h1>Hi there!</h1>
 
-def number_to_name(num):
-    # fill in your code below
-    # convert number to a name using if/elif/else
-    # don't forget to return the result!
-    if num == 0:
-        result = "rock"
-    elif num == 1:
-        result = "Spock"
-    elif num == 2:
-        result = "paper"
-    elif num == 3:
-        result = "lizard"
-    elif num == 4:
-        result = "scissors"
-    return result 
+    <p>
+      I'm your cool new webpage. Made with
+      <a href="https://glitch.com">Glitch</a>!
+    </p>
 
-    
-def name_to_number(name):
-    # fill in your code below
-    # convert name to number using if/elif/else
-    # don't forget to return the result!
-    if name == "rock":
-        result = 0
-    elif name == "Spock":
-        result = 1
-    elif name == "paper":
-        result = 2
-    elif name == "lizard":
-        result = 3
-    elif name == "scissors":
-        result = 4
-    return result
+    <!-- include the Glitch button to show what the webpage is about and
+          to make it easier for folks to view source and remix -->
+    <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+    <script src="https://button.glitch.me/button.js"></script>
+  </body>
+</html>
 
+<body>
+  <div class="container">
+    <section class="row">
+      <div class="wrapper span8 offset2">
+        <section class="top row">
+          <header class="span8">
+            <h1>Rock Paper Scissor Lizard Spock</h1>
+            <p>
+              Made by <a href="https://veerasundar.com">Veera</a> in 3 hours at
+              Singapore Airport, while waiting for a connecting flight. :)
+              <iframe
+                id="twitter-widget-0"
+                scrolling="no"
+                frameborder="0"
+                allowtransparency="true"
+                allowfullscreen="true"
+                class="twitter-share-button twitter-share-button-rendered twitter-tweet-button"
+                style="position: static; visibility: visible; width: 60px; height: 20px;"
+                title="Twitter Tweet Button"
+                src="https://platform.twitter.com/widgets/tweet_button.4f8aea4342a4ada72cba2bdffcff6b4d.en.html#dnt=false&amp;id=twitter-widget-0&amp;lang=en&amp;original_referer=https%3A%2F%2Fveerasundar.com%2Frock-paper-scissor-lizard-spoc%2F&amp;size=m&amp;text=Rock%20Paper%20Scissor%20Lizard%20Spock%20-%20Online%20Game&amp;time=1579646334198&amp;type=share&amp;url=https%3A%2F%2Fveerasundar.com%2Frock-paper-scissor-lizard-spoc%2F&amp;via=vraa"
+              ></iframe>
+            </p>
+          </header>
+        </section>
+        <section class="row">
+          <section class="gamepad span6 offset1">
+            <ul class="gestures">
+              <li data-gesture="rock" class="rock" style="opacity: 1;">
+                <img width="100px" src="img/rock.png" alt="Rock" />
+              </li>
+              <li data-gesture="paper" class="paper" style="opacity: 1;">
+                <img width="100px" src="img/paper.png" alt="Paper" />
+              </li>
+              <li data-gesture="scissor" class="scissor" style="opacity: 1;">
+                <img width="100px" src="img/scissor.png" alt="Scissor" />
+              </li>
+              <li data-gesture="lizard" class="lizard" style="opacity: 1;">
+                <img width="100px" src="img/lizard.png" alt="Lizard" />
+              </li>
+              <li data-gesture="spoc" class="spoc" style="opacity: 1;">
+                <img width="70px" src="img/spoc.png" alt="Spoc" />
+              </li>
+              <li
+                data-gesture="bot"
+                class="bot"
+                style="opacity: 1; display: none;"
+              ></li>
+            </ul>
+          </section>
+        </section>
+      </div>
+    </section>
+  </div>
+  <script
+    id="twitter-wjs"
+    src="https://platform.twitter.com/widgets.js"
+  ></script
+  ><script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="js/rpsls.js"></script>
+  <script>
+    !(function(d, s, id) {
+      var js,
+        fjs = d.getElementsByTagName(s)[0],
+        p = /^http:/.test(d.location) ? "http" : "https";
+      if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = p + "://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }
+    })(document, "script", "twitter-wjs");
+  </script>
 
-def rpsls(name): 
-    # fill in your code below
-
-    # convert name to player_number using name_to_number
-
-    # compute random guess for comp_number using random.randrange()
-
-    # compute difference of player_number and comp_number modulo five
-
-    # use if/elif/else to determine winner
-
-    # convert comp_number to name using number_to_name
-    
-    # print results
-    player_number = name_to_number(name)
-    comp_number = random.randrange(0, 5)
-   
-    print "Player chooses", name
-    print "Computer chooses", number_to_name(comp_number)
-   
-    if (comp_number + 1) % 5 == player_number:
-        print "Player wins!"
-    elif (comp_number + 2) % 5 == player_number:
-        print "Player wins!"
-    elif comp_number == player_number:
-        print "Player and computer tie!"
-    else:
-        print "Computer wins!"
-    print ""    
-
-    
-# test your code
-rpsls("rock")
-rpsls("Spock")
-
-
-var userChoice = prompt("Do you choose rock, paper, scissors, lizard, or spock?")
-var computerChoice = Math.random();
-if (computerChoice < 0.2) {
-    computerChoice = "rock";
-} else if (computerChoice <= 0.4) {
-    computerChoice = "paper";
-} else if (computerChoice <= 0.6) {
-    computerChoice = "scissors";
-} else if (computerChoice <= 0.8) {
-    computerChoice = "lizard";
-} else {
-    computerChoice = "spock";
-}
-
-alert("The computer chose " + computerChoice);
-
-var compare = function(choice1, choice2){
-    if (choice1 === choice2) {
-        alert("And... It's a tie!");
-    }
-
-//If the user chose rock...
-else if (choice1 === "rock") {
-    if (choice2 === "scissors") {
-        alert("Rock wins!");
-    } else if (choice2 === "paper") {
-        alert("Paper wins!");
-    } else if (choice2 === "lizard") {
-        alert("Rock wins!");
-    } else {
-        alert("Spock wins!");
-    }
-}
-
-//If the user chose paper...
-else if (choice1 === "paper") {
-    if (choice2 === "scissors") {
-        alert("Scissors wins!");
-    } else if (choice2 === "rock") {
-        alert("Paper wins!");
-    } else if (choice2 === "lizard") {
-        alert("Lizard wins!");
-    } else {
-        alert("Paper wins!");
-    }
-}
-
-//If the user chose scissors...
-else if (choice1 === "scissors") {
-    if (choice2 === "paper") {
-        alert("Scissors wins!");
-    } else if (choice2 === "rock") {
-        alert("Rock wins!");
-    } else if (choice2 === "lizard") {
-        alert("Scissors wins!");
-    } else {
-        alert("Spock wins!");
-    }
-}
-
-//If the user chose lizard...
-else if (choice1 === "lizard") {
-    if (choice2 === "scissors") {
-        alert("Scissors wins!");
-    } else if (choice2 === "rock") {
-        alert("Rock wins!");
-    } else if (choice2 === "paper") {
-        alert("Lizard wins!");
-    } else {
-        alert("Lizard wins!");
-    }
-}
-
-//If the user chose spock...
-else if (choice1 === "spock") {
-    if (choice2 === "scissors") {
-        alert("Spock wins!");
-    } else if (choice2 === "rock") {
-        alert("Spock wins!");
-    } else if (choice2 === "lizard") {
-        alert("Lizard wins!");
-    } else {
-        alert("Paper wins!");
-    }
-}
-};
-compare(userChoice, computerChoice);
-rpsls("paper")
-rpsls("lizard")
-rpsls("scissors")
+  <iframe
+    scrolling="no"
+    frameborder="0"
+    allowtransparency="true"
+    src="https://platform.twitter.com/widgets/widget_iframe.4f8aea4342a4ada72cba2bdffcff6b4d.html?origin=https%3A%2F%2Fveerasundar.com"
+    title="Twitter settings iframe"
+    style="display: none;"
+  ></iframe>
+</body>
